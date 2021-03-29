@@ -1,7 +1,9 @@
 const HDWalletProvider = require('@truffle/hdwallet-provider');
+const path = require('path');
 require('dotenv').config();
 
 module.exports = {
+  contracts_build_directory: path.join(__dirname, "client/src/contracts"),
   networks: {
     rinkeby: {
       provider: () =>
