@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Navbar from 'react-bootstrap/Navbar'
 import { Link } from 'react-router-dom'
 import Nav from 'react-bootstrap/Nav'
@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/Header.css'
 import logo from './assets/dota.png';
 
-function Header({contract}) {
+function Header({account}) {
     
     return (
         <Navbar className ='navbar navbar-inverse navbar-fixed-top' bg="dark" variant="dark">
@@ -27,10 +27,9 @@ function Header({contract}) {
             </Nav>
             <Nav className="ml-auto address">
                 <Nav.Item>
-                    Account : {contract}
+                    Account : {account}
                 </Nav.Item>
             </Nav>
-
         </Navbar>
     )
 }

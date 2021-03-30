@@ -59,7 +59,7 @@ class App extends Component {
     return (
       <div>
         <Router>
-          <Header contract={this.state.accounts[0]}/>
+          <Header account={this.state.accounts[0]}/>
           <Switch>
             <Route path ='/' exact component={() => (<Home account={this.state.accounts[0]} contract={this.state.contract}></Home>)}></Route>
           </Switch>

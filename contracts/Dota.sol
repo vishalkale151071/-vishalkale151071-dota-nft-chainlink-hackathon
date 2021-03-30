@@ -191,13 +191,27 @@ contract Dota is VRFConsumerBase, ERC721 {
     public
     view
     returns (uint256){
-        return heros.length
+        return heros.length;
     }
 
     function getItemCount()
     public
     view
     returns (uint256){
-        return items.length
+        return items.length;
+    }
+
+    function getHeroNFTs(address _account)
+    public
+    view
+    returns(uint256[] memory){
+        return ownerToHeros[_account];
+    }
+
+    function getItemNFTs(address _account)
+    public
+    view
+    returns(uint256[] memory){
+        return ownerToItems[_account];
     }
 }

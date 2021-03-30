@@ -16,6 +16,10 @@ h1, h2, h3, h4, h5 {
   font-weight: 400;
 }
 
+.cards {
+  margin: 10px;
+}
+
 .card {
   display: inline-block;
   width: 300px;
@@ -53,6 +57,7 @@ h1, h2, h3, h4, h5 {
   line-height: 1;
   border-radius: 2px;
   background: #bbbbbb;
+  font-size: medium;
 }
 .card__label {
   font-size: 10px;
