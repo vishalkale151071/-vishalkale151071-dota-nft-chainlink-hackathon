@@ -101,11 +101,11 @@ h1, h2, h3, h4, h5 {
 .card--normal .card__type {
   background-color: #C08A53;
 }
-.card--water {
+.Intelligent {
   background: linear-gradient(120deg, #1CB5E0 0%, #000851 100%);
   box-shadow: 0px 5px 20px -10px #000851;
 }
-.card--water .card__type {
+.Intelligent .card__type {
   background-color: #1CB5E0;
 }
 .card--electric {
@@ -114,10 +114,10 @@ h1, h2, h3, h4, h5 {
 .card--electric .card__type {
   background-color: #000;
 }
-.card--fire {
+.Strength {
   background: linear-gradient(0deg, #c71800 10%, #fcc245 100%);
 }
-.card--fire .card__type {
+.Strength .card__type {
   background-color: #c71800;
 }
 .card--psychic {
@@ -132,10 +132,10 @@ h1, h2, h3, h4, h5 {
 .card--dark .card__type {
   background: #5c0249;
 }
-.card--grass {
+.Agility {
   background: linear-gradient(140deg, #c4da3d 0%, #6e7f0e 69%, #275009 100%);
 }
-.card--grass .card__type {
+.Agility .card__type {
   background: #6e7f0e;
 }
 .card--ice {

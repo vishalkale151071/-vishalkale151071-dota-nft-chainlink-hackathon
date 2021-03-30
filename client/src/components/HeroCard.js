@@ -30,16 +30,14 @@ const HeroCard = ({ Id, contract}) => {
     
     return(
         (hero)?(
-       <figure className="card card--normal">
+       <figure className={"card " + PA}>
             <div className="card__image-container">
-                <img src="http://bafybeibvudboupc3f434bpsineothblcwfziwwqty5nzeuv55pa2l2ede4.ipfs.localhost:8080/?filename=PA.png" alt="Vaporeon" className="card__image" />   
+                <img src="https://cdn.bulbagarden.net/upload/thumb/f/fd/134Vaporeon.png/1200px-134Vaporeon.png" alt="Vaporeon" className="card__image" />   
             </div>
             <figcaption className="card__caption">
                 <h1 className="card__name">{hero[heroObject.name]}</h1>
 
-                <h3 className="card__type">
-                {PA}
-                </h3>
+                <h3 className="card__type">{PA}</h3>
 
                 <table className="card__stats">
                 <tbody>
