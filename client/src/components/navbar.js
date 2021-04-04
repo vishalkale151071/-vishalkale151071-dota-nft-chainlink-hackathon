@@ -9,7 +9,7 @@ import logo from './assets/dota.png';
 function Header({account}) {
     
     return (
-        <Navbar className ='navbar navbar-inverse navbar-fixed-top' bg="dark" variant="dark">
+        <Navbar scrolling className ='navbar navbar-inverse navbar-fixed-top' fixed="top" bg="dark" variant="dark">
             <Navbar.Brand as={Link} to="/">
             <img
                 src={logo}
@@ -22,7 +22,7 @@ function Header({account}) {
             </Navbar.Brand>
             <Nav className="nav-links">
                 <Nav.Link as={Link} to="/"><span>Home</span></Nav.Link>
-                <Nav.Link as={Link} to="/players"><span>Players</span></Nav.Link>
+                <Nav.Link as={Link} to="/heros"><span>Heros</span></Nav.Link>
                 <Nav.Link as={Link} to="/items"><span>Items</span></Nav.Link>
             </Nav>
             <Nav className="ml-auto address">

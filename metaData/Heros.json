@@ -1,0 +1,326 @@
+{
+    "1": {
+        "name": "Doom",
+        "attackType": "Melee",
+        "primaryAttribute": "Strength",
+        "faction": "Dire",
+        "image": "https://gateway.pinata.cloud/ipfs/QmUtiQyHvmVhjvkgspMNorkmSN7UZGhNKciJ6NwzLLk992",
+        "ability1": {
+            "name": "Devour",
+            "description": "Consumes an enemy or neutral creep, acquiring any special abilities that it possessed.",
+            "image": "https://gateway.pinata.cloud/ipfs/QmZXjegR8nsrBCmz1VMpvVhTMEMMiTZ1zSk69NhhGnJszn"
+        },
+        "ability2": {
+            "name": "Scorched Earth",
+            "description": "Carpets the nearby earth in flames, damaging enemies while Doom and any units under his control gain increased movement speed.",
+            "image":"https://gateway.pinata.cloud/ipfs/QmfKqpLMDQbCr514LCFCzd6XBnZpzEWT72rX5mMb5rmM54"
+        },
+        "ability3": {
+            "name": "Infernal Blade",
+            "description": "Doom swings his burning sword, igniting the enemy for a short duration.",
+            "image": "https://gateway.pinata.cloud/ipfs/QmcdgTaiPqttoFMtzqtVdrBjyLTuMzh1NAJ1YtqXDtNc8W"
+        },
+        "ability4": {
+            "name": "Doom",
+            "description": "Inflicts a curse that prevents an enemy Hero from casting spells or using items, while taking damage over time. Doom also dispels the hero.",
+            "image": "https://gateway.pinata.cloud/ipfs/QmNZjpZLLDVRvpbuxAcQbNA1SgQLCev7RSQeSAjtJj7ZCb"
+        }
+    },
+    "2": {
+        "name": "Wraith King",
+        "attackType": "Melee",
+        "primaryAttribute": "Strength",
+        "faction": "Dire",
+        "image": "https://gateway.pinata.cloud/ipfs/QmYC8KGJJ26HBrcA6apWF6gcmqgT8trBS6k7pQagagbqf1",
+        "ability1": {
+            "name": "Wraithfire Blast",
+            "description": "Wraith King sears an enemy unit with spectral fire, dealing damage and stunning, then dealing damage over time and slowing the target.",
+            "image": "https://gateway.pinata.cloud/ipfs/Qma8681P4faJHdiG4VBHjK8T9zn2LcLdzXTT9RaTzU2c5F"
+        },
+        "ability2": {
+            "name": "Vampiric Spirit",
+            "description": "Restore health based on the damage Wraith King deals when attacking enemy units. Can be cast to summon skeletons with Vampiric Spirit. Every two kills on an enemy unit adds a skeleton charge. Skeletons respawn once when killed.",
+            "image": "https://gateway.pinata.cloud/ipfs/QmUD9cEFDHzRKLa5gfmaysxke76GdoLjwENAmPkrcwKUEV"
+        },
+        "ability3": {
+            "name": "Mortal Strike",
+            "description": "Wraith King passively deals bonus damage on an attack with a cooldown.",
+            "image": "https://gateway.pinata.cloud/ipfs/QmdbUv4qvb9zEmCJpM2gZHVpFDuLw9AKNdFtPiPMHH2Aih"
+        },
+        "ability4": {
+            "name": "Reincarnation",
+            "description": "Wraith King's form regroups after death, allowing him to resurrect when killed in battle. Upon death, enemy units in a 900 radius will be slowed.",
+            "image": "https://gateway.pinata.cloud/ipfs/Qmaq2nHgkdTT2GbszDThY83WoyeJ1h1pFkaAiZuYhBnii1"
+        }
+    },
+    "3": {
+        "name": "Earthshaker",
+        "attackType": "Melee",
+        "primaryAttribute": "Strength",
+        "faction": "Radiant",
+        "image": "https://gateway.pinata.cloud/ipfs/QmYfQbpSzcj1EtGT2Xf5GogzwMrnjKC8EuU4b7miKoJWBS",
+        "ability1": {
+            "name": "Fissure",
+            "description": "Slams the ground with a mighty totem, creating an impassable ridge of stone while stunning and damaging enemy units along its line.",
+            "image": "https://gateway.pinata.cloud/ipfs/QmXNziqzDvVyXNhA3TLED2YRA4rQ6ysCkTPhp2nyfbFWcy"
+        },
+        "ability2": {
+            "name": "Enchant Totem",
+            "description": "Empowers Earthshaker's totem, causing it to deal extra damage and have 75 bonus attack range on the next attack.",
+            "image": "https://gateway.pinata.cloud/ipfs/Qme55CoqDBNakHnHtbtuo5VeMKe4pJfuKjPyzLhFdF4sX1"
+        },
+        "ability3": {
+            "name": "Aftershock",
+            "description": "Causes the earth to shake underfoot, adding additional damage and stuns to nearby enemy units when Earthshaker casts his abilities.",
+            "image": "https://gateway.pinata.cloud/ipfs/QmbQpiU8S7nNZmz9MmnXhg9UAj1PC8oiUmPZKXEFkZUx82"
+        },
+        "ability4": {
+            "name": "Echo Slam",
+            "description": "Shockwaves travel through the ground, damaging enemy units. Each enemy hit causes an echo to damage nearby units. Real heroes cause two echoes.",
+            "image": "https://gateway.pinata.cloud/ipfs/QmNYPhG9gnhUCLVfGEUdwUaqs7oX4nR6QEgFejVChqSf7y"
+        }
+    },
+    "4": {
+        "name": "Sven",
+        "attackType": "Melee",
+        "primaryAttribute": "Strength",
+        "faction": "Radiant",
+        "image": "https://gateway.pinata.cloud/ipfs/QmdoGnn8ojS2RjPiEiqswwYWhNy45SeWNa4shEZkuRsuMg",
+        "ability1": {
+            "name": "Storm Hammer",
+            "description": "Sven unleashes his magical gauntlet that deals damage and stuns enemy units in a small area around the target.",
+            "image": "https://gateway.pinata.cloud/ipfs/QmfXU2EBamaaAfEPzKJHQUGzsxfVdX4xnWxUFbfte9mBxX"
+        },
+        "ability2": {
+            "name": "Great Cleave",
+            "description": "Sven strikes with great force, cleaving all nearby enemy units with his attack.",
+            "image": "https://gateway.pinata.cloud/ipfs/Qmb7hH5sCnv47TWia7o9Y7nTGi8M9Qa4tWPFujJzRSvtHb"
+        },
+        "ability3": {
+            "name": "Warcry",
+            "description": "Sven's Warcry heartens his allied heroes for battle, increasing their armor and movement speed. Lasts 8 seconds.",
+            "image": "https://gateway.pinata.cloud/ipfs/QmYBNHPjmjUPeprAqQdrk3vhNv7rSegP3JwBGghpNw9F57"
+        },
+        "ability4": {
+            "name": "God's Strength",
+            "description": "Sven channels his rogue strength, granting bonus damage for 40 seconds.",
+            "image": "https://gateway.pinata.cloud/ipfs/QmRZB7NJvzRBT3WRh1mgjDBLwWKv1w2U69x2tdcYZiFRDj"
+        }
+    },
+    "5": {
+        "name": "Anti-Mage",
+        "attackType": "Melee",
+        "primaryAttribute": "Agility",
+        "faction": "Radiant",
+        "image": "https://gateway.pinata.cloud/ipfs/QmULPYFNMqHEYjmDSrdMX8n76m8P9VWjXo8qvMDoCUUo5p",
+        "ability1": {
+            "name": "Mana Break",
+            "description": "Burns an opponent's mana on each attack. Mana Break deals 50% of the mana burned as damage to the target. Mana Break has 50% effect if caused by illusions.",
+            "image": "https://gateway.pinata.cloud/ipfs/QmdfxbWyGkBmJdA1RjRTfBiHUZGMh8FhnNigFEn1n8zEjD"
+        },
+        "ability2": {
+            "name": "Blink",
+            "description": "Short distance teleportation that allows Anti-Mage to move in and out of combat.",
+            "image": "https://gateway.pinata.cloud/ipfs/QmPAhLCwkqeA43nH8iKWKmXn1NL8oBjpoN3Xhzjt81vL1k"
+        },
+        "ability3": {
+            "name": "Counterspell",
+            "description": "Passively grants you magic resistance. Can be activated to create an anti-magic shell around you that sends any targeted spells back towards enemies instead of affecting you.",
+            "image": "https://gateway.pinata.cloud/ipfs/Qmb9N9UTWDru1pj62FNcoHRmydi329gAKaMTFX9ry78PA6"
+        },
+        "ability4": {
+            "name": "Mana Void",
+            "description": "For each point of mana missing by the target unit, damage is dealt to it and surrounding enemies. The main target is also mini-stunned.",
+            "image": "https://gateway.pinata.cloud/ipfs/Qmdttcrw7rnYJ4i9VETqdws858JV1Mqzu8s764DAD3Dj97"
+        }
+    },
+    "6": {
+        "name": "Juggernaut",
+        "attackType": "Melee",
+        "primaryAttribute": "Agility",
+        "faction": "Radiant",
+        "image": "https://gateway.pinata.cloud/ipfs/QmQKEKwWCmRuwLmmryaX4dcD9dQaHqJWm8QgMnznVUc2cp",
+        "ability1": {
+            "name": "Blade Fury",
+            "description": "Causes a bladestorm of destructive force around Juggernaut, rendering him immune to magic and dealing damage to nearby enemy units.",
+            "image": "https://gateway.pinata.cloud/ipfs/Qmb1cJuXfuZWiHsq3oDjCHhbcn2AfKUTYBiBz4evuAdZLk"
+        },
+        "ability2": {
+            "name": "Healing Ward",
+            "description": "Summons a Healing Ward which heals all nearby allied units, based on their max health. The Healing Ward moves at 350 movement speed after being summoned. Lasts 25 seconds.",
+            "image": "https://gateway.pinata.cloud/ipfs/QmWoe2juF9UcWyTi45XR3xfmBuKxszsRYyP8VW9ZbbBfJV"
+        },
+        "ability3": {
+            "name": "Blade Dance",
+            "description": "Gives Juggernaut a chance to deal critical damage on each attack.",
+            "image": "https://gateway.pinata.cloud/ipfs/QmNi7EiePognuYkp5VTLCZGCUYQAnFANQnXbnUu5WqZiFz"
+        },
+        "ability4": {
+            "name": "Omnislash",
+            "description": "Juggernaut leaps towards the target enemy units, and then slashes the target and other nearby enemy units at an increased attack rate. Juggernaut is invulnerable for the duration.",
+            "image": "https://gateway.pinata.cloud/ipfs/QmVhBR9V2DRiUeFhFhDXahScGbmm12dQtLNWkrwpYKMCuK"
+        }
+    },
+    "7": {
+        "name": "Medusa",
+        "attackType": "Range",
+        "primaryAttribute": "Agility",
+        "faction": "Dire",
+        "image": "https://gateway.pinata.cloud/ipfs/QmXMFrnLzPWGh9CwR1KWCuMNutu7kSaPNGRzaL56ZBJFM6",
+        "ability1": {
+            "name": "Split Shot",
+            "description": "Medusa magically splits her shot into several arrows. These arrows deal a lower percent of her normal damage.",
+            "image": "https://gateway.pinata.cloud/ipfs/QmZf5nzRA78NazNDJX79NtEiNEkheRk1iEMFaRggGT9VHA"
+        },
+        "ability2": {
+            "name": "Mystic Snake",
+            "description": "A mystic snake made of energy jumps from target to target dealing damage. After it reaches its last target, it returns to Medusa to replenish her with mana. The snake deals more damage per jump and returns 11%/14%/17%/20% mana based on the targets' total mana.",
+            "image": "https://gateway.pinata.cloud/ipfs/QmVnFGgH3SzDJmXJnNyaDivPUVD9YDYqikt8t4aD2UTu4P"
+        },
+        "ability3": {
+            "name": "Mana Shield",
+            "description": "Creates a shield that absorbs 70% of incoming damage in exchange for Medusa's mana.",
+            "image": "https://gateway.pinata.cloud/ipfs/QmVUMpw5VzN9kH9axCMjCBtmvNxF1bjaGH7s52MGUho9Hz"
+        },
+        "ability4": {
+            "name": "Stone Gaze",
+            "description": "Any enemy units looking at Medusa will have their movement and attack speed slowed. If 2 seconds of total time is accumulated looking at Medusa while Stone Gaze is active, that unit will turn to stone. Petrified units are stunned, and take bonus physical damage.",
+            "image": "https://gateway.pinata.cloud/ipfs/QmW5nLe8keMg5XzpB9sULV3HkjZBkbC5XGPhUduMcyhGLN"
+        }
+    },
+    "8": {
+        "name": "Phantom Assassin",
+        "attackType": "Melee",
+        "primaryAttribute": "Agility",
+        "faction": "Dire",
+        "image": "https://gateway.pinata.cloud/ipfs/QmPp2tMXEoCvmD8caEtSKeiK8nx1ysmar7dPgZgH6hx7TB",
+        "ability1": {
+            "name": "Stifling Dagger",
+            "description": "Throws a dagger slowing the enemy unit's movement speed, dealing 65+25%/40%/55%/70% of Phantom Assassin's attack damage as physical damage and applying attack effects from items and abilities.",
+            "image": "https://gateway.pinata.cloud/ipfs/QmRnaMJsoKtV3Ev7pS4hnwu6BpCWCGZ5GedETUzmGJvDk8"
+        },
+        "ability2": {
+            "name": "Phantom Strike",
+            "description": "Teleports to a unit, friendly or enemy, and grants bonus attack speed while attacking if it's an enemy unit.",
+            "image": "https://gateway.pinata.cloud/ipfs/QmbhMuqBRALpkLhwPFqAaDnH3CkXpVcVwEz9uveZuKu3Zf"
+        },
+        "ability3": {
+            "name": "Blur",
+            "description": "Phantom Assassin focuses inward, increasing her ability to evade enemy attacks. Can be activated to blur her body, causing her to be impossible to see until near enemy heroes.",
+            "image": "https://gateway.pinata.cloud/ipfs/QmSLkyYz1KsM8B62X5MJaT25pwNTd8TVuesenViV95ZKN4"
+        },
+        "ability4": {
+            "name": "Coup de Grace",
+            "description": "Phantom Assassin refines her combat abilities, gaining a chance of delivering a devastating critical strike to enemy units. Stifling Dagger shares the same critical strike chance.",
+            "image": "https://gateway.pinata.cloud/ipfs/QmWNiscnT5jTwKntgeaA6GWxFxW4RcTCSDcvnRVCqDdivo"
+        }
+    },
+    "9": {
+        "name": "Enigma",
+        "attackType": "Range",
+        "primaryAttribute": "Intelligence",
+        "faction": "Dire",
+        "image": "https://gateway.pinata.cloud/ipfs/Qmd48oKYnUSfNBvqdm9rfChKd5e9hPWJ66CJm1uxrbgvpM",
+        "ability1": {
+            "name": "Malefice",
+            "description": "Focues Enigma's power on a target, causing it to take damage and become repeatedly stunned for multiple instances. An instance strikes every 2 seconds.",
+            "image": "https://gateway.pinata.cloud/ipfs/QmUYs3fUoWU3arDh1E8dWhKBB3ZxvaXZ9cE5n6hxKX91Kg"
+        },
+        "ability2": {
+            "name": "Demonic Conversion",
+            "description": "Transforms a creep into three fragments of Enigma himself. These eidolons are all under Enigma's control, and repeated successful attacks cause them to multiply. When this happens, the eidolons have their health restored.",
+            "image": "https://gateway.pinata.cloud/ipfs/QmTzJ96TyiT3aQSYt48AHTyUsZGrz1JJLWpyqPhg2aYCY4"
+        },
+        "ability3": {
+            "name": "Midnight Pulse",
+            "description": "Steeps an area in dark resonance, damaging enemy units based on their max HP.",
+            "image": "https://gateway.pinata.cloud/ipfs/QmVM8ME7c9qtJQqAb1NJpopkpHEP5fg7fbbLoq2jbAsJ6f"
+        },
+        "ability4": {
+            "name": "Black Hole",
+            "description": "Summons a vortex that sucks in nearby enemy units. Enemies affected by Black Hole cannot move, attack, or cast spells.",
+            "image": "https://gateway.pinata.cloud/ipfs/QmVxRA6Zkvtuwr1EqdXt7UYxLF2YFX2JdGs93jjWv5KVqJ"
+        }
+    },
+    "10": {
+        "name": "Disruptor",
+        "attackType": "Range",
+        "primaryAttribute": "Intelligence",
+        "faction": "Radiant",
+        "image": "https://gateway.pinata.cloud/ipfs/QmVRPcsAXDC5qgWoAQi1hXU7pC5dCi8xUdWrJXAEdb3nDN",
+        "ability1": {
+            "name": "Thunder Strike",
+            "description": "Repeatedly strikes the targeted unit with lightning. Each strike damages nearby enemy units in a small radius and slows enemy movement speed and attack speed by 100 for seconds. Provides vision of its target.",
+            "image": "https://gateway.pinata.cloud/ipfs/QmY126nhKCZJd9DxGsF9MWGP6PWCA3vBsmhSvFDJbzu9kk"
+        },
+        "ability2": {
+            "name": "Glimpse",
+            "description": "Teleports the target hero back to where it was 4 seconds ago. Instantly kills illusions.",
+            "image": "https://gateway.pinata.cloud/ipfs/QmfPSRx3rgeCsowCFxsFAeJPop4A1CggteP4QjxztbokLV"
+        },
+        "ability3": {
+            "name": "Kinetic Field",
+            "description": "After a short formation time, creates a circular barrier of kinetic energy that enemies can't pass.",
+            "image": "https://gateway.pinata.cloud/ipfs/QmaPFeo9zmk1xtBxBAKdfi3WkxzKgXz1eSkMMfhca78Vgq"
+        },
+        "ability4": {
+            "name": "Static Storm",
+            "description": "Creates a damaging static storm that also silences all enemy units in the area for the duration. The damage starts off weak, but increases in power over the duration.",
+            "image": "https://gateway.pinata.cloud/ipfs/QmP5tVdoeMgckwiqwPckB4CwPTyPZJWorkWbJJyEUe2Ju7"
+        }
+    },
+    "11": {
+        "name": "Invoker",
+        "attackType": "Range",
+        "primaryAttribute": "Intelligence",
+        "faction": "Dire",
+        "image": "https://gateway.pinata.cloud/ipfs/QmYSEseeJitGEtj3XuX7P6pHaCUWY11DA77B5q8q9WycZi",
+        "ability1": {
+            "name": "Quas",
+            "description": "Focuses Enigma's power on a target, causing it to take damage and become repeatedly stunned for multiple instances. An instance strikes every 2 seconds.",
+            "image": "https://gateway.pinata.cloud/ipfs/QmXBTnqyBaap6v4ZFJPyvpMzMKhAPWYqDTf3k4xZGU43u1"
+        },
+        "ability2": {
+            "name": "Wex",
+            "description": "Allows manipulation of storm elements. Each Wex instance provides increased attack speed and movement speed.",
+            "image": "https://gateway.pinata.cloud/ipfs/QmYwKsrpA2XZv3s11yNTthxMwKZF5G8RgWWWAeguHnu35m"
+        },
+        "ability3": {
+            "name": "Exort",
+            "description": "Allows manipulation of fire elements. Each Exort instance provides increased attack damage.",
+            "image": "https://gateway.pinata.cloud/ipfs/QmXS7YvBBGuCSNqiNaJCCEyXiB2sW2LEgCkgMawDqVAaVo"
+        },
+        "ability4": {
+            "name": "Invoke",
+            "description": "Combines the properties of the elements currently being manipulated to create a new spell for Invoker to use. Invoke cooldown is reduced by 0.3 seconds for each orb level.",
+            "image": "https://gateway.pinata.cloud/ipfs/QmNj4A7JFvs6ovUndfup5nJaMHubs27gsLQPvLYrEzavWR"
+        }
+    },
+    "12": {
+        "name": "Zeus",
+        "attackType": "Range",
+        "primaryAttribute": "Intelligence",
+        "faction": "Radiant",
+        "image": "https://gateway.pinata.cloud/ipfs/QmUVWmq9gL4eiobXHyoEs8gvmFt2LPbWows7wXuqg4ohwh",
+        "ability1": {
+            "name": "Arc Lightning",
+            "description": "Hurls a bolt of lightning that leaps through nearby enemy units.",
+            "image": "https://gateway.pinata.cloud/ipfs/QmZehH1c7T26ih3Q3K2ZrZp3ygQ38mWAPC5eBtd93J5VUC"
+        },
+        "ability2": {
+            "name": "Lightning Bolt",
+            "description": "Calls down a bolt of lightning to strike an enemy unit, causing damage and a mini-stun. When cast, Lightning Bolt briefly provides unobstructed vision and True Sight around the target in a 750 radius. Can be cast on the ground, affecting the closest enemy hero in 375 range.",
+            "image": "https://gateway.pinata.cloud/ipfs/QmRMZiE4MitExTHQMDazhgq36uBJLkNV8mPsRu7uGxdnKG"
+        },
+        "ability3": {
+            "name": "Static Field",
+            "description": "Zeus shocks any enemy hit by his abilities, causing damage proportional to their current health.",
+            "image": "https://gateway.pinata.cloud/ipfs/QmdbrMaWkVBN4m4QQwu9vib5MVyKmMiX2J2MBZMw6NLbAZ"
+        },
+        "ability4": {
+            "name": "Thundergod's Wrath",
+            "description": "Strikes all enemy heroes with a bolt of lightning, no matter where they may be. Thundergod's Wrath also provides True Sight around each hero struck. If an enemy hero is invisible, it takes no damage, but the True Sight is still created at that hero's location.",
+            "image": "https://gateway.pinata.cloud/ipfs/QmXZX9uei1Q6ppL9MqrBK8i6dwBi9ft8NDM79tWpZmWfwU"
+        }
+    }
+}

@@ -1,91 +1,119 @@
 import React, { useEffect, useState } from 'react';
 import './styles/style.css'
 
-const HeroCard = ({ Id, contract}) => {
-    
-    const [hero, setHero] = useState(null);
-    const [PA, setPA] = useState(null)
-    const heroObject = {
+const HeroCard = ({ Id, contract, metaData}) => {
+
+    const [heroFirstHalf, setHeroFirstHalf] = useState(null); //hero variavle to hold hero data
+    const [heroSecondHalf, setHeroSecondHalf] = useState(null); //hero variavle to hold hero data
+    const heroObject = { // mapping from function return index from solidity to attribute for easier operations
         "heroCode": '0',
         "name": '1',
         "level": '2',
         "damage": '3',
         "strength": '4',
         "agility": '5',
-        "intelligence": '6',
-        "hitPoints": '7',
-        "mana": '8',
-        "movementSpeed": '9'
+        "intelligence": '0',
+        "hitPoints": '1',
+        "mana": '2',
+        "movementSpeed": '3',
+        "armor": '4',
+        "tokenId": '5'
     }
+    
+
     useEffect(() => {
-        contract.methods.getHero(Id).call().then((result) => {
-            console.log(result);
-            setHero(result);
-            let herocode = parseInt(result[heroObject.heroCode]);
-            if(herocode<5){setPA("Strength")}
-            else if(herocode<9){setPA("Agility")}
-            else{setPA("Intelligent")}
-        });   
+        contract.methods.getHeroFirstHalf(Id).call().then((result) => { // get hero from smart contract
+            setHeroFirstHalf(result);
+            //console.log("First : ", result);
+        });
+        
+        contract.methods.getHeroSecondHalf(Id).call().then((result) => { // get hero from smart contract
+            setHeroSecondHalf(result);
+            //console.log("Second : ", result);
+        });
+
     }, [Id, contract.methods, heroObject.heroCode])
     
     return(
-        (hero)?(
-       <figure className={"card " + PA}>
+        (heroFirstHalf && heroSecondHalf)?(
+       <figure className={"card " + metaData[heroFirstHalf[heroObject.heroCode]].primaryAttribute}>
             <div className="card__image-container">
-                <img src="https://cdn.bulbagarden.net/upload/thumb/f/fd/134Vaporeon.png/1200px-134Vaporeon.png" alt="Vaporeon" className="card__image" />   
+                <img src={metaData[heroFirstHalf[heroObject.heroCode]].image} alt="Vaporeon" className="card__image" />
+                <h3 className="card-level">{heroFirstHalf[heroObject.level]}</h3>   
             </div>
             <figcaption className="card__caption">
-                <h1 className="card__name">{hero[heroObject.name]}</h1>
+                <h1 className="card__name">{heroFirstHalf[heroObject.name] + " (" + metaData[heroFirstHalf[heroObject.heroCode]].name + ")"}</h1>
 
-                <h3 className="card__type">{PA}</h3>
-
+                <h3 className="card__type">{metaData[heroFirstHalf[heroObject.heroCode]].primaryAttribute}</h3>
+                
                 <table className="card__stats">
                 <tbody>
                 <tr>
-                    <th>HP</th>
-                    <td>{hero[heroObject.hitPoints]}</td>
-                </tr>
-
-                <tr>
+                    <th>Health</th>
+                    <td>{heroSecondHalf[heroObject.hitPoints]}</td>
                     <th>Mana</th>
-                    <td>{hero[heroObject.mana]}</td>
+                    <td>{heroSecondHalf[heroObject.mana]}</td>
                 </tr>
 
                 <tr>
                     <th>Strength</th>
-                    <td>{hero[heroObject.strength]}</td>
+                    <td>{heroFirstHalf[heroObject.strength]}</td>
+                    <th>Armor</th>
+                    <td>{heroSecondHalf[heroObject.armor]}</td>
                 </tr>
 
                 <tr>
                     <th>Agility</th>
-                    <td>{hero[heroObject.agility]}</td>
+                    <td>{heroFirstHalf[heroObject.agility]}</td>
                 </tr>
 
                 <tr>
                     <th>Intelligence</th>
-                    <td>{hero[heroObject.intelligence]}</td>
+                    <td>{heroSecondHalf[heroObject.intelligence]}</td>
                 </tr>
 
                 <tr>
                     <th>Damage</th>
-                    <td>{hero[heroObject.damage]}</td>
+                    <td>{heroFirstHalf[heroObject.damage]}</td>
                 </tr>
 
                 <tr>
-                    <th>Movement Speed</th>  
-                    <td>{hero[heroObject.movementSpeed]}</td>
+                    <th>Speed</th>  
+                    <td>{heroSecondHalf[heroObject.movementSpeed]}</td>
                 </tr>
                 </tbody></table>
                 
                 <div className="card__abilities">
-                {/* <h4 className="card__ability">
-                    <span className="card__label">Ability</span>
-                    Absorb
-                </h4>
-                <h4 className="card__ability">
-                    <span className="card__label">Hidden Ability</span>
-                    Hydration
-                </h4> */}
+                <table>
+                    <tbody>
+                        <tr>
+                            <th><img className="ability_image" alt={metaData[heroFirstHalf[heroObject.heroCode]].ability1.name} src={metaData[heroFirstHalf[heroObject.heroCode]].ability1.image} 
+                                title={
+                                       " Name : " + metaData[heroFirstHalf[heroObject.heroCode]].ability1.name + " \n" +
+                                        "Description: " + metaData[heroFirstHalf[heroObject.heroCode]].ability1.description
+                                }
+                            /></th>
+                            <th><img className="ability_image" alt={metaData[heroFirstHalf[heroObject.heroCode]].ability2.name} src={metaData[heroFirstHalf[heroObject.heroCode]].ability2.image} 
+                                title={
+                                    " Name : " + metaData[heroFirstHalf[heroObject.heroCode]].ability2.name + " \n" +
+                                     "Description: " + metaData[heroFirstHalf[heroObject.heroCode]].ability2.description
+                             }
+                            /></th>
+                            <th><img className="ability_image" alt={metaData[heroFirstHalf[heroObject.heroCode]].ability3.name} src={metaData[heroFirstHalf[heroObject.heroCode]].ability3.image} 
+                                title={
+                                    " Name : " + metaData[heroFirstHalf[heroObject.heroCode]].ability3.name + " \n" +
+                                     "Description: " + metaData[heroFirstHalf[heroObject.heroCode]].ability3.description
+                             }
+                            /></th>
+                            <th><img className="ability_image" alt={metaData[heroFirstHalf[heroObject.heroCode]].ability4.name} src={metaData[heroFirstHalf[heroObject.heroCode]].ability4.image} 
+                                title={
+                                    " Name : " + metaData[heroFirstHalf[heroObject.heroCode]].ability4.name + " \n" +
+                                     "Description: " + metaData[heroFirstHalf[heroObject.heroCode]].ability4.description
+                             }
+                            /></th>
+                        </tr>
+                    </tbody>
+                </table>
                 </div>
             </figcaption> 
        </figure>):(

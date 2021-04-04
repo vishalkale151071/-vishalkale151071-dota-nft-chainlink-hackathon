@@ -1,0 +1,186 @@
+{
+    "1": {
+        "name": "Iron Branch",
+        "description": "A seemingly ordinary branch, its ironlike qualities are bestowed upon the bearer.",
+        "image": "https://gateway.pinata.cloud/ipfs/QmfPFqiux7sffTnUGwhmTLNiuDDduNpzuCcZE1vxqox9md",
+        "Active": "Plant Tree",
+        "Strength": 1,
+        "Agility": 1,
+        "Intelligence": 1,
+        "cost": 50
+    },
+    "2": {
+        "name": "Quelling Blade",
+        "description": "The axe of a fallen gnome, it allows you to effectively maneuver the forest.",
+        "image": "https://gateway.pinata.cloud/ipfs/QmQmS6KaLznPZdSZZDvsK1euDBvvYsvLg8Le8R9zZrk1fs",
+        "Active": "Chop Tree",
+        "Passive": "Increases attack damage against non-hero units by 13 for melee heroes, and 6 for ranged.",
+        "cost": 130
+    },
+    "3": {
+        "name": "Band of Elvenskin",
+        "description": "A tensile fabric often used for its light weight and ease of movement.",
+        "image": "https://gateway.pinata.cloud/ipfs/Qme9PD5UoX4bYiGxW2RR5BRcWwRVsGPqUseTT5DkVbfifT",
+        "Agility": 6,
+        "cost": 450
+    },
+    "4": {
+        "name": "Belt of Strength",
+        "description": "A valued accessory for improving vitality.",
+        "image": "https://gateway.pinata.cloud/ipfs/QmRBTNe2ntM6fG9CQ6zVTY9ezQzDuJ2WA4QM22NzawJJUg",
+        "Strength": 6,
+        "cost": 450
+    },
+    "5": {
+        "name": "Robe of the Magi",
+        "description": "This robe corrupts the soul of the user, but provides wisdom in return.",
+        "image": "https://gateway.pinata.cloud/ipfs/QmUcBF79wnKHDBsePRJsUFnoPuonknNvRCEz81ugDSmkWR",
+        "Intelligence": 6,
+        "cost": 450
+    },
+    "6": {
+        "name": "Blade of Alacrity",
+        "description": "A long blade imbued with time magic.",
+        "image": "https://gateway.pinata.cloud/ipfs/QmPYVfyJjWWP2Avx3aJHR7wQijLpG2dLBHyFgrKUjsjd5z",
+        "Agility": 10,
+        "cost": 1000
+    },
+    "7": {
+        "name": "Ogre Axe",
+        "description": "You grow stronger just by holding it.",
+        "image": "https://gateway.pinata.cloud/ipfs/QmdK41szFAP1DAWidPG9trsqtsopZ3H9MZ6533nxXJRNee",
+        "Strength": 10,
+        "cost": 1000
+    },
+    "8": {
+        "name": "Staff of Wizardry",
+        "description": "A staff of magical powers passed down from the eldest mages.",
+        "image": "https://gateway.pinata.cloud/ipfs/QmT3ywdMxJCFNVEJwZ5865eHPCMT4QtAhLfYPFsHPNg3rP",
+        "Intelligence": 10,
+        "cost": 1000
+    },
+    "9": {
+        "name": "Crown",
+        "description": "A stately crown created to ensure a well-meaning but ungifted heir could fend off usurpers and govern with a strong hand.",
+        "image": "https://gateway.pinata.cloud/ipfs/QmQAdSb6EGaP91cQqSJv8GF1KU2XWQgpj7N2745vYAKP4x",
+        "Strength": 4,
+        "Agility": 4,
+        "Intelligence": 4,
+        "cost": 450
+    },
+    "10": {
+        "name": "Aghanim's Shard",
+        "description": "With origins known only to a single wizard, fragments of this impossible crystal are nearly as coveted as the renowned scepter itself.",
+        "image": "https://gateway.pinata.cloud/ipfs/QmeQi6MDnaTJhEpYuC19eRjKYoAgoEq4jCAghuxRaemb4n",
+        "Passive": "Upgrades one of your abilities.",
+        "cost": 1400
+    },
+    "11": {
+        "name": "Ring of Protection",
+        "description": "A glimmering ring that defends its bearer.",
+        "image": "https://gateway.pinata.cloud/ipfs/Qmcz9JwE81pMwjpgesJr4uyY9CqoaQDipyuCU6fNQFvDpV",
+        "Armor": 2,
+        "cost": 175
+    },
+    "12": {
+        "name": "Blades of Attack",
+        "description": "The damage of these small, concealable blades should not be underestimated.",
+        "image": "https://gateway.pinata.cloud/ipfs/QmeUvhR2Dd4VfZLG9D5BXimeimTcWSsVaqigAEKi1Hyvt2",
+        "damage": 9,
+        "cost": 450
+    },
+    "13": {
+        "name": "Chainmail",
+        "description": "A medium weave of metal chains.",
+        "image": "https://gateway.pinata.cloud/ipfs/QmUj3JHeqWed5K37Q8hsTkMDhJoqzzqsDWog3YoTA1vT7E",
+        "Armor": 4,
+        "cost": 550
+    },
+    "14": {
+        "name": "Helm of Iron Will",
+        "description": "The helmet of a legendary warrior who fell in battle.",
+        "image": "https://gateway.pinata.cloud/ipfs/QmSwbrcprdZWyJz3uygpxFxFXGT8EFJujX7Nz3sPpmu5xN",
+        "HealthRegeneration": 5,
+        "Armor": 5,
+        "cost": 925
+    },
+    "15": {
+        "name": "Blight Stone",
+        "description": "An unnerving stone unearthed beneath the Fields of Endless Carnage.",
+        "image": "https://gateway.pinata.cloud/ipfs/QmVwMqa1j7xJeB9vGYnFSmQbJJhTXE2jcGmBfk2UY9ZB2A",
+        "Passive": "Your attacks reduce the target's armor by 2 for 8 seconds.",
+        "cost": 300 
+    },
+    "16": {
+        "name": "Boots of Speed",
+        "description": "Fleet footwear, increasing movement.",
+        "image": "https://gateway.pinata.cloud/ipfs/QmZ4eabkn5bS3svRExA59WR66cTvSAD4vt5RnVQncfnEnw",
+        "MovementSpeed": 45,
+        "cost": 500
+    },
+    "17": {
+        "name": "Broadsword",
+        "description": "The classic weapon of choice for knights, this blade is sturdy and reliable for slaying enemies.",
+        "image": "https://gateway.pinata.cloud/ipfs/QmehZJqNqguepEJu1fd5kxRYUqku5nQKodujC5SHpxNn79",
+        "damage": 15,
+        "cost": 1000
+    },
+    "18": {
+        "name": "Javelin",
+        "description": "A rather typical spear that can sometimes pierce through an enemy's armor when used to attack.",
+        "image": "https://gateway.pinata.cloud/ipfs/QmfBSSG2mXhw6zh2sPH7LfqmZRHAohJYKtDxcb5Qs4FUKS",
+        "Passive": "Grants each attack a 30% chance to pierce through evasion and deal 70 bonus magical damage.",
+        "cost": 1100
+    },
+    "19": {
+        "name": "Claymore",
+        "description": "A sword that can cut through armor, it's a commonly chosen first weapon for budding swordsmen.",
+        "image": "https://gateway.pinata.cloud/ipfs/QmVapYJL4QRFZkNVMA7qj2KhzaXemE6iHi6cALvNThCbai",
+        "damage": 20,
+        "cost": 1350
+    },
+    "20": {
+        "name": "Mithril Hammer",
+        "description": "A hammer forged of pure mithril.",
+        "image": "https://gateway.pinata.cloud/ipfs/QmdxG24mgYPKWaL9wcUWr5nT4xowN3gMpaffsHFHrYdfe3",
+        "damage": 24,
+        "cost": 1600
+    },
+    "21": {
+        "name": "Phase Boots",
+        "description": "Boots that allow the wearer to travel between the ether.",
+        "image": "https://gateway.pinata.cloud/ipfs/QmU2fkj9LP3bDy2cSVbJzmMtLpwY2asf13YM9zJG9TnjVs",
+        "damage":  18,
+        "Armor": 4,
+        "MovementSpeed": 45,
+        "Active": "Gives 20% increased movement speed on melee heroes, and 10% on ranged heroes, and lets you move through units and turn more quickly for 3 seconds.", 
+        "cost": 1500
+    },
+    "22": {
+        "name": "Arcane Boots",
+        "description": "Magi equipped with these boots are valued in battle.",
+        "image": "https://gateway.pinata.cloud/ipfs/QmQYvaEdCbSAjp81bfaJUYzXQ4UfjLszqh96FkVWYEznBA",
+        "MovementSpeed": 45,
+        "mana": 250,
+        "Active": "Restores 160 mana to all nearby allies.",
+        "cost": 1400
+    },
+    "23": {
+        "name": "Tranquil Boots",
+        "description": "While they increase the longevity of the wearer, this boot is not particularly reliable.",
+        "image": "https://gateway.pinata.cloud/ipfs/QmVKNMbFNGPRBZaECnuBDYu1W11GoUk2B37JTbzzQRJnwP",
+        "HealthRegeneration": 14,
+        "MovementSpeed": 70,
+        "Passive": "Whenever you attack a hero or are attacked by any unit, the bonus 14 HP regen is lost and the movement speed bonus is reduced to 45 for 13 seconds.",
+        "cost": 925
+    },
+    "24": {
+        "name": "Mekansm",
+        "description": "A glowing jewel formed out of assorted parts that somehow fit together perfectly.",
+        "image": "https://gateway.pinata.cloud/ipfs/QmWdnUYfo2Rf8eaJxbvwH2SLVtx8oCr7CTjVHKF2HF9SsK",
+        "Armor": 4,
+        "Active": "Heals 275 health to allied units in a 1200 radius.",
+        "Passive": "Grants 2 health regeneration to allied units in a 1200 radius.",
+        "cost": 1875
+    }
+}
