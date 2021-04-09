@@ -18,6 +18,24 @@ const Home = ({account, contract}) => {
     const [itemMetaData, setitemMetaData] = useState(null); // metadata od items
     
     useEffect(() => {
+        //setHeroMetaData(heroData.default); heros json data from local file
+        //setitemMetaData(itemData.default); items json data from local file
+         fetch("https://gateway.pinata.cloud/ipfs/QmVNdiUfYGZhfAcBpFj87KmaYDU9rbSU25Wjgnu1aJHwDu")
+        .then(response => response.json())
+        .then((data) => {
+            setHeroMetaData(data);
+            //console.log(data);
+        })
+
+        fetch("https://gateway.pinata.cloud/ipfs/QmRDZDm7zu9kpo2VAdB4GktB9PMKW3SUNJHGLciRoJTfuq")
+        .then(response => response.json())
+        .then((data) => {
+            setitemMetaData(data);
+            //console.log(data);
+        })
+    }, []);
+
+    useEffect(() => {
         contract.methods.getItemNFTs(account).call((error, result) => {
             if(result){
                 setItems(result);
@@ -35,22 +53,6 @@ const Home = ({account, contract}) => {
                 console.log(error);
             }
         });// get users all items
-
-        //setHeroMetaData(heroData.default); heros json data from local file
-        //setitemMetaData(itemData.default); items json data from local file
-        fetch("https://gateway.pinata.cloud/ipfs/QmVNdiUfYGZhfAcBpFj87KmaYDU9rbSU25Wjgnu1aJHwDu")
-        .then(response => response.json())
-        .then(async (data) => {
-            await setHeroMetaData(data);
-            //console.log(data);
-        })
-
-        fetch("https://gateway.pinata.cloud/ipfs/QmRDZDm7zu9kpo2VAdB4GktB9PMKW3SUNJHGLciRoJTfuq")
-        .then(response => response.json())
-        .then((data) => {
-            setitemMetaData(data);
-            //console.log(data);
-        })
     }, [account, contract.methods])
 
     async function requestHero(){ // request new hero using provided value
@@ -110,11 +112,11 @@ const Home = ({account, contract}) => {
                                 Create Player
                             </Button>
                         </Form>
-                        <hr/>
+                        <hr color="white"/>
                         <div className="cards">
-                            {(heros) ? (
+                            {(heros.length > 0) ? (
                                 heros.map((hero) => (
-                                    <HeroCard key={"H"+hero} Id={parseInt(hero)} metaData={heroMetaData} contract={contract} />
+                                    <HeroCard key={"H"+hero} account={account} Id={parseInt(hero)} metaData={heroMetaData} contract={contract} />
                                 ))
                             ) : (
                                 <h3>You have not created any hero</h3>
@@ -136,14 +138,14 @@ const Home = ({account, contract}) => {
                                 Create Item
                             </Button>
                         </Form>
-                        <hr/>
+                        <hr color="white"/>
                         <div className="cards">
-                            {(items) ? (
+                            {(items.length > 0) ? (
                                 items.map((item) => (
                                     <ItemCard key={"I"+item} Id={parseInt(item)} metaData={itemMetaData} contract={contract} />
                                 ))
                             ) : (
-                                <h3>You have not created any hero</h3>
+                                <h3>You have not created any Item</h3>
                             )}
 
                         </div>

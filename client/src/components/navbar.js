@@ -9,7 +9,7 @@ import logo from './assets/dota.png';
 function Header({account}) {
     
     return (
-        <Navbar scrolling className ='navbar navbar-inverse navbar-fixed-top' fixed="top" bg="dark" variant="dark">
+        <Navbar scrolling="true" className ='navbar navbar-inverse navbar-fixed-top' fixed="top" bg="dark" variant="dark">
             <Navbar.Brand as={Link} to="/">
             <img
                 src={logo}

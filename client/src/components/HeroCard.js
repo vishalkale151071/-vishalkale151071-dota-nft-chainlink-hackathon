@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import './styles/style.css'
-
-const HeroCard = ({ Id, contract, metaData}) => {
+import { useHistory } from 'react-router';
+import Inventory from './Inventory';
+const HeroCard = ({ Id, contract, metaData, account}) => {
 
     const [heroFirstHalf, setHeroFirstHalf] = useState(null); //hero variavle to hold hero data
     const [heroSecondHalf, setHeroSecondHalf] = useState(null); //hero variavle to hold hero data
+    const history = useHistory();
     const heroObject = { // mapping from function return index from solidity to attribute for easier operations
         "heroCode": '0',
         "name": '1',
@@ -19,7 +21,6 @@ const HeroCard = ({ Id, contract, metaData}) => {
         "armor": '4',
         "tokenId": '5'
     }
-    
 
     useEffect(() => {
         contract.methods.getHeroFirstHalf(Id).call().then((result) => { // get hero from smart contract
@@ -34,11 +35,16 @@ const HeroCard = ({ Id, contract, metaData}) => {
 
     }, [Id, contract.methods, heroObject.heroCode])
     
+    function goToDetails() {
+        history.push(`/heros/${Id}`);
+    }
+
     return(
         (heroFirstHalf && heroSecondHalf)?(
-       <figure className={"card " + metaData[heroFirstHalf[heroObject.heroCode]].primaryAttribute}>
+        <>
+            <figure className={"vishal " + metaData[heroFirstHalf[heroObject.heroCode]].primaryAttribute}>
             <div className="card__image-container">
-                <img src={metaData[heroFirstHalf[heroObject.heroCode]].image} alt="Vaporeon" className="card__image" />
+                <img onClick={goToDetails} src={metaData[heroFirstHalf[heroObject.heroCode]].image} alt="Vaporeon" className="card__image" />
                 <h3 className="card-level">{heroFirstHalf[heroObject.level]}</h3>   
             </div>
             <figcaption className="card__caption">
@@ -84,39 +90,41 @@ const HeroCard = ({ Id, contract, metaData}) => {
                 </tbody></table>
                 
                 <div className="card__abilities">
-                <table>
-                    <tbody>
-                        <tr>
-                            <th><img className="ability_image" alt={metaData[heroFirstHalf[heroObject.heroCode]].ability1.name} src={metaData[heroFirstHalf[heroObject.heroCode]].ability1.image} 
-                                title={
-                                       " Name : " + metaData[heroFirstHalf[heroObject.heroCode]].ability1.name + " \n" +
-                                        "Description: " + metaData[heroFirstHalf[heroObject.heroCode]].ability1.description
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th><img className="ability_image" alt={metaData[heroFirstHalf[heroObject.heroCode]].ability1.name} src={metaData[heroFirstHalf[heroObject.heroCode]].ability1.image} 
+                                    title={
+                                        " Name : " + metaData[heroFirstHalf[heroObject.heroCode]].ability1.name + " \n" +
+                                            "Description: " + metaData[heroFirstHalf[heroObject.heroCode]].ability1.description
+                                    }
+                                /></th>
+                                <th><img className="ability_image" alt={metaData[heroFirstHalf[heroObject.heroCode]].ability2.name} src={metaData[heroFirstHalf[heroObject.heroCode]].ability2.image} 
+                                    title={
+                                        " Name : " + metaData[heroFirstHalf[heroObject.heroCode]].ability2.name + " \n" +
+                                        "Description: " + metaData[heroFirstHalf[heroObject.heroCode]].ability2.description
                                 }
-                            /></th>
-                            <th><img className="ability_image" alt={metaData[heroFirstHalf[heroObject.heroCode]].ability2.name} src={metaData[heroFirstHalf[heroObject.heroCode]].ability2.image} 
-                                title={
-                                    " Name : " + metaData[heroFirstHalf[heroObject.heroCode]].ability2.name + " \n" +
-                                     "Description: " + metaData[heroFirstHalf[heroObject.heroCode]].ability2.description
-                             }
-                            /></th>
-                            <th><img className="ability_image" alt={metaData[heroFirstHalf[heroObject.heroCode]].ability3.name} src={metaData[heroFirstHalf[heroObject.heroCode]].ability3.image} 
-                                title={
-                                    " Name : " + metaData[heroFirstHalf[heroObject.heroCode]].ability3.name + " \n" +
-                                     "Description: " + metaData[heroFirstHalf[heroObject.heroCode]].ability3.description
-                             }
-                            /></th>
-                            <th><img className="ability_image" alt={metaData[heroFirstHalf[heroObject.heroCode]].ability4.name} src={metaData[heroFirstHalf[heroObject.heroCode]].ability4.image} 
-                                title={
-                                    " Name : " + metaData[heroFirstHalf[heroObject.heroCode]].ability4.name + " \n" +
-                                     "Description: " + metaData[heroFirstHalf[heroObject.heroCode]].ability4.description
-                             }
-                            /></th>
-                        </tr>
-                    </tbody>
-                </table>
+                                /></th>
+                                <th><img className="ability_image" alt={metaData[heroFirstHalf[heroObject.heroCode]].ability3.name} src={metaData[heroFirstHalf[heroObject.heroCode]].ability3.image} 
+                                    title={
+                                        " Name : " + metaData[heroFirstHalf[heroObject.heroCode]].ability3.name + " \n" +
+                                        "Description: " + metaData[heroFirstHalf[heroObject.heroCode]].ability3.description
+                                }
+                                /></th>
+                                <th><img className="ability_image" alt={metaData[heroFirstHalf[heroObject.heroCode]].ability4.name} src={metaData[heroFirstHalf[heroObject.heroCode]].ability4.image} 
+                                    title={
+                                        " Name : " + metaData[heroFirstHalf[heroObject.heroCode]].ability4.name + " \n" +
+                                        "Description: " + metaData[heroFirstHalf[heroObject.heroCode]].ability4.description
+                                }
+                                /></th>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
+                <Inventory contract={contract} id={Id}/>
             </figcaption> 
-       </figure>):(
+            </figure>
+       </>):(
            <h3>Loading your hero</h3>
        )
     );

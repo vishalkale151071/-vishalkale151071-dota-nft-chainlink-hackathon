@@ -1,0 +1,31 @@
+.owner {
+    color: white;
+    display: inline-block;
+    margin-left: 5em;
+    margin-bottom: 30px;
+}
+
+.description {
+    padding: 1em;
+}
+
+.inventory {
+    height: 50px;
+    margin: 5px;
+    max-width: 50px;
+}
+
+.slot {
+    height: inherit;
+    width: 60px; 
+    border: solid white 2px;
+}
+
+.slot:hover {
+    transform: scale(1.5);
+}
+
+.slots {
+    border: solid wheat 2px;
+    z-index: 0;
+}

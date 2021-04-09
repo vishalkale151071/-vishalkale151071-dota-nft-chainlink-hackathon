@@ -14,7 +14,7 @@ const Footer = () => {
                 <SocialIcon url='https://twitter.com/Vishalkale1494'/>
                 <SocialIcon url="https://www.linkedin.com/in/vishalkale1494"/>
                 <SocialIcon url="https://github.com/vishalkale151071" />
-                <SocialIcon url="https://discordapp.com/users/527946249345957919" />
+                <SocialIcon url="https://discordapp.com/users/527946249345957919"/>
                 </div>
             </div>
             <div className="footer-center col-md-4 col-sm-6">
