@@ -75,8 +75,8 @@ class App extends Component {
           <Header account={this.state.accounts[0]}/>
           <Switch>
             <Route path = '/' exact component={() => (<Home account={this.state.accounts[0]} contract={this.state.contract}></Home>)}></Route>
-            <Route path = '/heros' exact component={() => (<Heros account={this.state.accounts[0]} contract={this.state.contract}/>)}></Route>
-            <Route path = '/heros/:id' exact component={() => (<HeroDetails contract={this.state.contract} account={this.state.accounts[0]}/>)}></Route>
+            <Route path = '/heroes' exact component={() => (<Heros account={this.state.accounts[0]} contract={this.state.contract}/>)}></Route>
+            <Route path = '/heroes/:id' exact component={() => (<HeroDetails contract={this.state.contract} account={this.state.accounts[0]}/>)}></Route>
             <Route path = '/hero/equip/:id' exact component={() => (<EquipItem contract={this.state.contract} account={this.state.accounts[0]}/>)}></Route>
             <Route path = '/items' exact component={() => (<Items account={this.state.accounts[0]} contract={this.state.contract}/>)}></Route>
             <Route path = '/items/:id' exact component={() => (<ItemDetails account={this.state.accounts[0]} contract={this.state.contract}/>)}></Route>

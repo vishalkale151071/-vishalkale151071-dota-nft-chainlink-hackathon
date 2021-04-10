@@ -47,7 +47,7 @@ contract Dota is VRFConsumerBase, ERC721 {
     mapping(uint256 => uint256[]) heroToItems; // mapping for hero to infused items
     mapping(uint256 => bool) equippedItems; //check if items is equiped or not
 
-    // modifiers start
+    // Modifiers Start
     modifier existingItem(uint256 _id){
         require(_id >= 0 && _id < items.length, "Item does not exists.");
         _;
@@ -68,7 +68,15 @@ contract Dota is VRFConsumerBase, ERC721 {
         _;
     }
 
-    // modifiers ends
+    // Modifiers End
+    
+    // Events Start
+    event HeroCreated(address _owner, uint8 _code, uint16 _strength, uint16 _agility, uint16 _intelligence, uint16 _damage); // emit event when hero is created.
+
+    event ItemCreated(address _owner, uint8 _code); // emit event when item is created.
+
+    event heroLeveledUp(uint256 _tokenId, uint256 _heroId,uint8 _level); // emit event when hero i leveled up
+    // Events End
     
     constructor(address _VRFCoordinator, address _LinkToken, bytes32 _keyHash) public
     VRFConsumerBase(_VRFCoordinator, _LinkToken)
@@ -81,7 +89,9 @@ contract Dota is VRFConsumerBase, ERC721 {
         owner = msg.sender;
     }
 
-    function requestHero(uint256 _seed, string memory _name) public
+    function requestHero(uint256 _seed, string memory _name)
+    public
+    payable
     returns(bytes32) { // function to create random hero
         require(LINK.balanceOf(address(this)) >= fee, "Not enough LINK - fill contract with faucet" );
         bytes32 requestId = requestRandomness(keyHash, fee, _seed);
@@ -91,7 +101,9 @@ contract Dota is VRFConsumerBase, ERC721 {
         return(requestId);
     }
 
-    function requestItem(uint256 _seed) public
+    function requestItem(uint256 _seed)
+    public
+    payable
     returns(bytes32) { //function to create random item
         require(LINK.balanceOf(address(this)) >= fee, "Not enough LINK - fill contract with faucet" );
         bytes32 requestId = requestRandomness(keyHash, fee, _seed);
@@ -140,6 +152,7 @@ contract Dota is VRFConsumerBase, ERC721 {
             
             _safeMint(requestToSender[requestId], Id);
             ownerToHeros[requestToSender[requestId]].push(newId); //push array index in owned heros
+            emit HeroCreated(requestToSender[requestId], heroCode, strength, agility, intelligence, damage);
         }else{
             uint256 newId = items.length;
             uint8 itemCode = uint8(randomNumber % 24 + 1); // there are total 24 items
@@ -151,7 +164,8 @@ contract Dota is VRFConsumerBase, ERC721 {
             );
 
             _safeMint(requestToSender[requestId], Id);
-            ownerToItems[requestToSender[requestId]].push(newId); // push array index in owned items
+            ownerToItems[requestToSender[requestId]].push(newId); // push array index in owned items.
+            emit ItemCreated(requestToSender[requestId], itemCode);
         }
        
     }
@@ -184,6 +198,7 @@ contract Dota is VRFConsumerBase, ERC721 {
 
     function levelUp(uint256 _id) //function to level up hero add 1 level and 2 to each attrinute
     public
+    payable
     existingHero(_id){
         require(heros[_id].level <= 30, "You are At Max level");
         heros[_id].level += 1;
@@ -194,19 +209,14 @@ contract Dota is VRFConsumerBase, ERC721 {
         heros[_id].mana += 22;
         heros[_id].armor += 1;
         heros[_id].damage += 2;
+
+        emit heroLeveledUp(heros[_id].tokenId, _id, heros[_id].level);
     }
 
     function withdrawLink() // withdraw link from contract
     external{
         require(msg.sender == owner, "Only Owner can withdraw LINKs.");
         require(LINK.transfer(msg.sender, LINK.balanceOf(address(this))), "Unable to transfer");
-    }
-
-    function linkBalance() // check the LINK balance of contract
-    external 
-    view 
-    returns(uint256){
-        return(LINK.balanceOf(address(this)));
     }
 
     function getHeroOwner(uint256 _id)
@@ -262,6 +272,7 @@ contract Dota is VRFConsumerBase, ERC721 {
 
     function equipItem(uint256 _heroId, uint256 _itemId,uint16 _strength, uint16 _agility, uint16 _intelligence, uint16 _damage, uint16 _armor, uint16 _mana, uint16 _movementSpeed)
     public
+    payable
     existingHero(_heroId)
     existingItem(_itemId)
     heroOwnerOnly(_heroId)
@@ -300,5 +311,11 @@ contract Dota is VRFConsumerBase, ERC721 {
         }
 
         return (ids, codes);
+    }
+
+    function withdraw()
+    public{
+        require(owner == msg.sender, "Only Owner.");
+        msg.sender.transfer(address(this).balance);
     }
 }

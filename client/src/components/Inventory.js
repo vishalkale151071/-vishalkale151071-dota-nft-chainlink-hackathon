@@ -20,7 +20,7 @@ const Inventory = ({ contract, id}) => {
         contract.methods.getEquippedItems(id).call().then((result) => {
             setInventory(result[1]);
             setIds(result[0])
-            console.table(result);
+            //console.table(result);
         })
     },[contract.methods, id]);
 

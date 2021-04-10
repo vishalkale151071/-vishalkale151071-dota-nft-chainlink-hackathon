@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
 import './styles/style.css'
 
-const ItemCard = ({ Id, contract, metaData}) => {
+const ItemCard = ({ Id, contract, metaData, button}) => {
     const history = useHistory();
     const [item, setItem] = useState(false); // item variable to hold item
     //const [itemData, setItemData] = useState({}); // itemData variable to hold item metaData 
@@ -18,9 +18,9 @@ const ItemCard = ({ Id, contract, metaData}) => {
         history.push(`/items/${Id}`);
     }
     return(
-        (item)?(
-            <figure onClick={goToDetails} className="vishal card--electric">
-                <div className="card__image-container">
+        (item && metaData)?(
+            <figure className="vishal card--electric">
+                <div onClick={goToDetails} className="card__image-container">
                     <img className="Item-image" src={metaData[item].image} alt={metaData[item].name} />   
                 </div>
                 <figcaption className="card__caption">
@@ -53,6 +53,7 @@ const ItemCard = ({ Id, contract, metaData}) => {
                         )}
                     </div>
                 </figcaption> 
+                {button}
             </figure>):(
            <h3>Loading your item</h3>
        )

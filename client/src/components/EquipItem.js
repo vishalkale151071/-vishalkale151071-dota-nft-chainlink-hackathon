@@ -5,6 +5,7 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import '../components/styles/style.css'
 import ItemCard from './ItemCard';
+import Web3 from 'web3';
 
 
 const EquipItem = ({contract, account}) => {
@@ -30,22 +31,20 @@ const EquipItem = ({contract, account}) => {
     async function equipItem(_id){
         let itemCode = await contract.methods.getItem(_id).call();
         let {Strength, Agility, Intelligence, damage, Armor, MovementSpeed, mana} = await metaData[itemCode["0"]]
-        console.log(id/*hero*/, _id/*item*/, Strength||0, Agility||0, Intelligence||0, damage||0, Armor||0, mana||0, MovementSpeed||0);
-        contract.methods.equipItem(id/*hero*/, _id/*item*/, Strength||0, Agility||0, Intelligence||0, damage||0, Armor||0, mana||0, MovementSpeed||0).send({from: account}).then(result => (console.table(result)));
+        contract.methods.equipItem(id/*hero*/, _id/*item*/, Strength||0, Agility||0, Intelligence||0, damage||0, Armor||0, mana||0, MovementSpeed||0).send({from: account, value: Web3.utils.toWei("0.001", 'ether')});
     }
     return(
         (metaData) && (
             <>
                 <Row>
                     <Col sm={12} >
-                        <h2 className="heading">Equip item {id}</h2>
+                        <h2 className="heading">Equip item</h2>
                     </Col>
                 </Row>
                 <Row>
                     {items.map((_id) => (
                         <Col key={"C"+_id}>
-                                <ItemCard key={"I"+_id} Id={_id} contract={contract} account={account} metaData={metaData}/>
-                                <center><Button key={"B"+_id} variant="danger" onClick={() => equipItem(_id)}>Equip</Button></center>
+                            <ItemCard key={"I"+_id} Id={_id} contract={contract} account={account} metaData={metaData} button={<Button key={"B"+_id} variant="danger" onClick={() => equipItem(_id)}>Equip</Button>}/>
                         </Col>
                     ))}
                 </Row>

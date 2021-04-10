@@ -36,11 +36,11 @@ const HeroCard = ({ Id, contract, metaData, account}) => {
     }, [Id, contract.methods, heroObject.heroCode])
     
     function goToDetails() {
-        history.push(`/heros/${Id}`);
+        history.push(`/heroes/${Id}`);
     }
 
     return(
-        (heroFirstHalf && heroSecondHalf)?(
+        (heroFirstHalf && heroSecondHalf && metaData)?(
         <>
             <figure className={"vishal " + metaData[heroFirstHalf[heroObject.heroCode]].primaryAttribute}>
             <div className="card__image-container">

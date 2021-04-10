@@ -7,6 +7,8 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import ItemCard from './ItemCard';
+import Web3 from 'web3';
+import swal from 'sweetalert';
 // import * as heroData from '../metaData/Heros.json'; heros json data from local file
 // import * as itemData from '../metaData/Items.json'; items json data from local file
 
@@ -14,8 +16,12 @@ const Home = ({account, contract}) => {
 
     const [items, setItems] = useState([]); //items to hold all users items
     const [heros, setHeros] = useState([]); //heros to hold all users heros
-    const [heroMetaData, setHeroMetaData] = useState(null); // metadata of heros
-    const [itemMetaData, setitemMetaData] = useState(null); // metadata od items
+    const [heroMetaData, setHeroMetaData] = useState(false); // metadata of heros
+    const [itemMetaData, setitemMetaData] = useState(false); // metadata od items
+    const [playerLoading, setPlayerLoading] = useState(false);
+    const [itemLoading, setItemLoading] = useState(false);
+    const animation = (<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>)
+    useState(() => {}, [playerLoading, itemLoading]); // for loading animation
     
     useEffect(() => {
         //setHeroMetaData(heroData.default); heros json data from local file
@@ -63,13 +69,29 @@ const Home = ({account, contract}) => {
             return
         }
 
-        contract.methods.requestHero(seed, name).send({from: account}).on('transactionHash', (hash) => {
-            console.log("Transaction started : ", hash);
-        }).on('confirmation', (confirmationNumber, receipt) => {
-            console.log('Transaction confirmed : ', confirmationNumber, receipt);
-        }).on('error', (error, receipt) => {
-            console.log("Transaction Failed", error, receipt);
+        contract.methods.requestHero(seed, name).send({from: account, value: Web3.utils.toWei("0.001", 'ether')}).on('error', (error, receipt) => {
+            swal({
+                icon: "error",
+                title: "Oh snap",
+                text: `Something went wrong.`
+            });
+            setPlayerLoading(false);
         });
+        
+        setPlayerLoading(true);
+
+        await contract.events.HeroCreated(
+            {fromBlock:0},
+                (error, event) => {
+                if(!error){
+                    swal({
+                        title: "congratulations.",
+                        text: `You got ${heroMetaData[(event.returnValues._code).toString()].name}`,
+                        button: "Aww yiss!"
+                    }).then(() => (window.location.reload()));
+                }
+            }
+        )
     }
 
     async function requestItem(){ // request new item using provided value
@@ -79,17 +101,36 @@ const Home = ({account, contract}) => {
             return
         }
 
-        contract.methods.requestItem(seed).send({from: account}).on('transactionHash', (hash) => {
-            console.log("Transaction started : ", hash);
-        }).on('confirmation', (confirmationNumber, receipt) => {
-            console.log('Transaction confirmed : ', confirmationNumber, receipt);
-        }).on('error', (error, receipt) => {
-            console.log("Transaction Failed", error, receipt);
+        contract.methods.requestItem(seed).send({from: account, value: Web3.utils.toWei("0.001", 'ether')}).on('error', (error, receipt) => {
+            swal({
+                icon: "error",
+                title: "Oh snap",
+                text: `Something went wrong.`
+            });
+            setItemLoading(false);
         });
+        
+        setItemLoading(true);
+
+        await contract.events.ItemCreated(
+            {fromBlock:0},
+                (error, event) => {
+                if(!error){
+                    //console.log(event.returnValues._code);
+                    swal({
+                        title: "congratulations.",
+                        text: `You got ${itemMetaData[(event.returnValues._code).toString()].name}`,
+                        button: "Aww yiss!"
+                    }).then(() => (window.location.reload()));
+                }else{
+                    console.log(error);
+                }
+            }
+        )
     }
     
     return(
-        <div>
+        (heroMetaData && itemMetaData) && (<div>
             <Row>
                 <Col>
                     <center>
@@ -109,7 +150,7 @@ const Home = ({account, contract}) => {
                             </Form.Group>
                             
                             <Button variant="success" onClick={requestHero}>
-                                Create Player
+                                {playerLoading && animation} Create Player
                             </Button>
                         </Form>
                         <hr color="white"/>
@@ -119,7 +160,7 @@ const Home = ({account, contract}) => {
                                     <HeroCard key={"H"+hero} account={account} Id={parseInt(hero)} metaData={heroMetaData} contract={contract} />
                                 ))
                             ) : (
-                                <h3>You have not created any hero</h3>
+                                <h3>You have not created any heroes</h3>
                             )}
                         </div>
                     </center>
@@ -135,9 +176,11 @@ const Home = ({account, contract}) => {
                             </Form.Group>
                             
                             <Button variant="success" onClick={requestItem}>
-                                Create Item
+                            {itemLoading && animation} Create Item
                             </Button>
                         </Form>
+                        <br />
+                        <br />
                         <hr color="white"/>
                         <div className="cards">
                             {(items.length > 0) ? (
@@ -152,8 +195,8 @@ const Home = ({account, contract}) => {
                     </center>
                 </Col>
             </Row>
-        </div>
-    );
+        </div>)
+        );
 }
 
 export default Home

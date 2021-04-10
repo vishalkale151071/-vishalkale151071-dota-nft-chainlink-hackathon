@@ -21,7 +21,7 @@ const Items = ({ account, contract}) => {
     },[contract.methods]);
 
     return (
-        <div className="cards">
+        (metaDate) && (<div className="cards">
             <h2 className="heading">DOTA items</h2>
             {(items > 0)?(
                 [...Array(parseInt(items))].map((_,id) => (
@@ -31,7 +31,7 @@ const Items = ({ account, contract}) => {
             (
                 <h3>No Items added yet</h3>
             )}
-        </div>
+        </div>)
     )
 }
 

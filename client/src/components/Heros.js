@@ -22,7 +22,7 @@ const Heros = ({contract, account}) => {
     },[contract.methods])
     
     return(
-        <div className="cards">
+        (metaDate) && (<div className="cards">
             <h2 className="heading">DOTA heros</h2>
             {(heros > 0)?(
                 [...Array(parseInt(heros))].map((_,id) => (
@@ -32,7 +32,7 @@ const Heros = ({contract, account}) => {
             (
                 <h3>No heros added yet</h3>
             )}
-        </div>
+        </div>)
     );
 }
 

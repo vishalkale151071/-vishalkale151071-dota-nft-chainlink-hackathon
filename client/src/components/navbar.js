@@ -22,7 +22,7 @@ function Header({account}) {
             </Navbar.Brand>
             <Nav className="nav-links">
                 <Nav.Link as={Link} to="/"><span>Home</span></Nav.Link>
-                <Nav.Link as={Link} to="/heros"><span>Heros</span></Nav.Link>
+                <Nav.Link as={Link} to="/heroes"><span>Heroes</span></Nav.Link>
                 <Nav.Link as={Link} to="/items"><span>Items</span></Nav.Link>
             </Nav>
             <Nav className="ml-auto address">
